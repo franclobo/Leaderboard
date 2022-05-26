@@ -6,23 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leaderboard</title>
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
 </head>
 <body>
-  <h1 class="title">Leaderboard</h1>
+  <h1 id="title">Leaderboard</h1>
   <section class="results">
-    <h2 class="subtitle">Recent Scores</h2>
-    <input class="btn" type="reset" value="Refresh">
-    <ul class="scores">
-      <li>just an example</li>
-    </ul>
+    <h2 id="subtitle">Recent Scores</h2>
+    <input class="btn" id="refresh" type="reset" value="Refresh" onclick="window.location.reload()">
+    <ul id="scores"></ul>
   </section>
-  <section class="data">
+  <form id="data">
     <h2 class="subtitle">Add your score</h2>
-    <input class="dataInput" type="text" placeholder="Your name">
-    <input class="dataInput" type="number" placeholder="Your score">
-    <input class="btn" type="submit" value="Submit">
+    <input class="dataInput" id="name" type="text" placeholder="Your name">
+    <input class="dataInput" id="score" type="number" placeholder="Your score">
+    <input class="btn" id="submit" type="submit" value="Submit">
 
-  </section>
-  
+  </form>
 </body>
 </html>
