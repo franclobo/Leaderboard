@@ -1,4 +1,6 @@
-import { nameInput, scoreInput, container, scoresList, Score } from './modules/setup.js';
+import { 
+  nameInput, scoreInput, container, scoresList, Score 
+} from './modules/setup.js';
 
 const addBtn = document.getElementById('submit');
 const data = document.getElementById('data');
