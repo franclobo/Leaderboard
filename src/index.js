@@ -1,5 +1,5 @@
-import { 
-  nameInput, scoreInput, container, scoresList, Score 
+import {
+  nameInput, scoreInput, container, scoresList, Score,
 } from './modules/setup.js';
 
 const addBtn = document.getElementById('submit');
