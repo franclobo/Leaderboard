@@ -1,25 +1,22 @@
 import {
-  nameInput, scoreInput, container, scoresList, Score,
+  gameName, gameID, populate, listScores,
+} from './modules/API.js';
+
+import {
+  nameInput, scoreInput, container,
 } from './modules/setup.js';
 
 const addBtn = document.getElementById('submit');
-const data = document.getElementById('data');
+const refreshBtn = document.getElementById('refresh');
 
-const printList = () => {
-  for (let i = 0; i < scoresList.length; i += 1) {
-    const scoreStorage = document.createElement('li');
-    scoreStorage.textContent = `${scoresList[i].name}: ${scoresList[i].score}`;
-    scoreStorage.className = 'scoreStorage';
-    container.append(scoreStorage);
-  }
-};
-
-printList();
+if (gameID === null) { gameName(); }
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const score = new Score(nameInput.value, scoreInput.value);
-  score.addNew(score);
-  data.reset();
-  window.location.reload();
+  populate(nameInput, scoreInput, gameID);
+});
+
+refreshBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  listScores(gameID, container);
 });
