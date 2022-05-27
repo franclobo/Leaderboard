@@ -1,6 +1,6 @@
 import { msg } from './setup.js';
 
-const gameID = localStorage.getItem('scores');
+export const gameID = localStorage.setItem('scores')
 const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
 const hide = () => {
