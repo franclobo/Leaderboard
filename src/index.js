@@ -9,8 +9,6 @@ import {
 const addBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
 
-if (gameID === null) { gameName(); }
-
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   populate(nameInput, scoreInput, gameID);
