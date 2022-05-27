@@ -16,6 +16,11 @@ module.exports = {
         test: /bootstrap\/dist\/js\/umd\//,
         use: 'imports-loader?jQuery=jquery',
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: ['file-loader'],
+        type: 'asset/resource',
+      },
     ],
   },
 };
