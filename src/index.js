@@ -6,8 +6,13 @@ import {
   nameInput, scoreInput, container,
 } from './modules/setup.js';
 
+import backgroundIMG from './ventas.jpg'
+
 const addBtn = document.getElementById('submit');
 const refreshBtn = document.getElementById('refresh');
+const wallpaper = document.querySelector('html');
+
+wallpaper.style.backgroundImage = `url('${backgroundIMG}')`;
 
 if (gameID === null) { gameName(); }
 
