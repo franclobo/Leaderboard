@@ -1,12 +1,9 @@
-html {
-  
-  justify-content: center;
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url(./8c848ceaba3ada54e6960a343ca42c1c.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
-}
-
-body {
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 20px;
