@@ -44,7 +44,6 @@ export const populate = async (nameInput, scoreInput, gameID) => {
 };
 
 export const listScores = async (gameID, container) => {
-  msg.textContent = 'Loading...';
   container.innerHTML = '';
   let response = await fetch(`${apiURL}/${gameID}/scores`, {
     method: 'GET',
