@@ -1,5 +1,6 @@
 import { msg } from './setup.js';
 
+const gameID = localStorage.getItem('scores');
 const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
 const hide = () => {
@@ -52,7 +53,9 @@ export const listScores = async (gameID, container) => {
     },
   });
   response = await response.json();
-  response = response.result.sort((a, b) => { return b.score - a.score });
+  response = response.result.sort((a, b) => {
+    return (b.score - a.score);
+  });
   response.forEach((element) => {
     container.innerHTML += `<li>${element.user} ${element.score}</li>`;
   });
