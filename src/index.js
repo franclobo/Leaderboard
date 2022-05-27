@@ -1,6 +1,7 @@
 import {
-  gameName, gameID, populate, listScores,
+  gameName, populate, listScores,
 } from './modules/API.js';
+
 import {
   nameInput, scoreInput, container, 
 } from './modules/setup.js';
@@ -17,5 +18,5 @@ addBtn.addEventListener('click', (e) => {
 
 refreshBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  listScores(gameID, container)
+  listScores(gameID, container);
 });

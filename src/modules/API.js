@@ -1,13 +1,13 @@
-import { msg } from "./setup";
+import { msg } from "./setup.js";
 
 const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
-const hide = () =>  {
-  msg.setAttribute('style', 'display: none')
+const hide = () => {
+  msg.setAttribute('style', 'display: none');
 };
 
 export const gameName = async (gameID) => {
-  let response = await fetch(apiURL,{
+  let response = await fetch(apiURL, {
     method: 'POST',
     body: JSON.stringify({ name: 'Ready player one' }),
     headers: {
@@ -17,11 +17,11 @@ export const gameName = async (gameID) => {
   response = await response.json();
   gameID = await response.result.slice(14, 34);
   localStorage.setItem('scores', gameID);
-  windows.location.reload();
+  window.location.reload();
 };
 
 export const populate = async (nameInput, scoreInput, gameID) => {
-  if (nameInput.value !== '' && scoreInput.value !== '' && isNaN(scoreInput.value) === false) {
+  if (nameInput.value !== '' && scoreInput.value !== '' && Number.isNaN(scoreInput.value) === false) {
     await fetch(`${apiURL}/games/${gameID}/scores/`, {
       method: 'POST',
       body: JSON.stringify({
@@ -37,14 +37,14 @@ export const populate = async (nameInput, scoreInput, gameID) => {
     scoreInput.value = '';
     setTimeout(hide, 3000);
   } else {
-    msg.textContent = "Complete all";
+    msg.textContent = 'Complete all';
     setTimeout(hide, 3000);
   }
-}
+};
 
 export const listScores = async (gameID, container) => {
   msg.textContent = 'Loading...';
-  container.innerHTML =  '';
+  container.innerHTML = '';
   let response = await fetch(`${apiURL}/games/${gameID}/scores`, {
     method: 'GET',
     headers: {
@@ -52,9 +52,7 @@ export const listScores = async (gameID, container) => {
     },
   });
   response = await response.json();
-  console.log(response.result)
   response = response.result.sort((a,b)=>{return b.score-a.score});
-  console.log(response)
   response.forEach((element) => {
     container.innerHTML += `<li>${element.user} ${element.score}</li>`;
   });
