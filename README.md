@@ -16,8 +16,6 @@ For this application the priority is to create a working version of the leaderbo
 ## Live Demo
 
 [Leaderboard](https://franclobo.github.io/Leaderboard/dist/)<br>
-![image](https://user-images.githubusercontent.com/58642949/170765045-acd339a4-57f5-47e7-813d-1b42667d4bc0.png)
-
 
 ## Authors
 
@@ -46,4 +44,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
